@@ -1,4 +1,4 @@
-//Globals
+//Global arrays for input variables (characters) to generate for passwords
 var specialCharacter = ['@', '!', '#', '$', '%', '^', '&', '*', '<', '?', '+', '~', '_', '-', '/', '|', '{', '}', '[', ']']
 
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -9,7 +9,7 @@ var numericalValue = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 var characterSet = [];
 
-//Password Generator
+//Password Generate button
 var generateBtn = document.querySelector("#generate");
 
 
@@ -26,9 +26,13 @@ function writePassword() {
 //Write "click" function for the generate button
 generateBtn.addEventListener("click", writePassword);
 
+
+//Function for generating password to include variables, length and, password content 
 function generatePassword() {
     var passLength = prompt("How long would you like your password?");
 
+
+    //Password length verification
     if (passLength < 8 || passLength > 128) {
         alert("Password must be between 8 to 128 characters");
         return "Try Again, Bum";
